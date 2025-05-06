@@ -13,7 +13,8 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.cdgutierrez456.expo-todo-app"
     },
     "android": {
       "adaptiveIcon": {

@@ -8,7 +8,7 @@ describe('TodoItem testing', () => {
 
   it('Exist text correctly', () => {
     const { getByText } = render(element)
-    // expect(getByText('First task')).toBeTruthy()
+    expect(getByText('First task')).toBeTruthy()
     expect(getByText('Delete')).toBeTruthy()
   })
 
@@ -50,7 +50,7 @@ describe('TodoItem testing', () => {
   it('Delete button is correct', () => {
     const deleteMock = jest.fn()
     const { getByText } = render(
-      <TodoItem task={task} deleteTask={deleteMock} toggleCompleted={deleteMock} />
+      <TodoItem task={task} deleteTask={deleteMock} toggleCompleted={() => {}} />
     )
     const buttonDelete = getByText('Delete')
     fireEvent.press(buttonDelete)

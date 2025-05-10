@@ -9,14 +9,13 @@ export default function FormItem() {
   } = useForm({
     defaultValues: {
       firstName: "",
-      lastName: "",
-      password: ""
+      lastName: ""
     },
   })
-  // const onSubmit = (data: any) => console.log(data)
-  const onSubmit = (data: any) => {
+  const onSubmit = (data: any) => console.log(data)
+  // const onSubmit = (data: any) => {
     
-  }
+  // }
 
   return (
     <SafeAreaView style={styles.container}>

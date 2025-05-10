@@ -42,21 +42,21 @@ describe('FormItem Component', () => {
     });
   });
 
-  // it('calls console.log on valid submit with correct values', async () => {
-  //   const { getByPlaceholderText, getByText } = render(<FormItem />);
-  //   const consoleSpy = jest.spyOn(console, 'log').mockImplementation();
+  it('calls console.log on valid submit with correct values', async () => {
+    const { getByPlaceholderText, getByText } = render(<FormItem />);
+    const consoleSpy = jest.spyOn(console, 'log').mockImplementation();
 
-  //   fireEvent.changeText(getByPlaceholderText('First name'), 'Ana');
-  //   fireEvent.changeText(getByPlaceholderText('Last name'), 'Ramírez');
-  //   fireEvent.press(getByText('Submit'));
+    fireEvent.changeText(getByPlaceholderText('First name'), 'Ana');
+    fireEvent.changeText(getByPlaceholderText('Last name'), 'Ramírez');
+    fireEvent.press(getByText('Submit'));
 
-  //   await waitFor(() => {
-  //     expect(consoleSpy).toHaveBeenCalledWith({
-  //       firstName: 'Ana',
-  //       lastName: 'Ramírez',
-  //     });
-  //   });
+    await waitFor(() => {
+      expect(consoleSpy).toHaveBeenCalledWith({
+        firstName: 'Ana',
+        lastName: 'Ramírez',
+      });
+    });
 
-  //   consoleSpy.mockRestore();
-  // });
+    consoleSpy.mockRestore();
+  });
 });

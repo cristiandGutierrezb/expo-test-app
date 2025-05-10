@@ -9,7 +9,7 @@ export default function TodoList() {
   
   const [tasks, setTasks] = useState([
     { id: 1, text: 'Doctor Appointment', completed: true },
-    { id: 2, text: 'Meeting at School', completed: false },
+    { id: 2, text: 'Meeting at School', completed: false }
   ]);
   const [text, setText] = useState('');
   

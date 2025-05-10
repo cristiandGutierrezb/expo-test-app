@@ -1,29 +1,42 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { View, TextInput, Button } from 'react-native';
 import TodoItem from './TodoItem';
 
+// import { getAllTask } from '../lib/api';
+// import { clearInformationTasks } from '../utils/mappingTasks';
+
 export default function TodoList() {
-  // State Hooks
+  
   const [tasks, setTasks] = useState([
     { id: 1, text: 'Doctor Appointment', completed: true },
     { id: 2, text: 'Meeting at School', completed: false },
   ]);
   const [text, setText] = useState('');
-  // Function to Add Task
+  
   function addTask() {
     const newTask = { id: Date.now(), text, completed: false };
     setTasks([...tasks, newTask]);
     setText('');
   }
-  // Function to Delete Task
+  
   function deleteTask(id: any) {
     setTasks(tasks.filter(task => task.id !== id));
   }
-  // Function to Toggle Task Completion
+  
   function toggleCompleted(id: any) {
     setTasks(tasks.map(task => (task.id === id ? { ...task, completed: !task.completed } : task)));
   }
-  // Render TodoList Component
+
+  // useEffect(() => {
+  //   getAllTask()
+  //   .then((data) => {
+  //     const mappingTaks = clearInformationTasks(data.data)
+  //     console.log(mappingTaks);
+  //     setTasks(mappingTaks)
+  //   })
+  //   .catch(e => console.log(e))
+  // }, [])
+  
   return (
     <View>
       {tasks.map(task => (

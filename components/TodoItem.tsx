@@ -7,18 +7,19 @@ export default function TodoItem({ task, deleteTask, toggleCompleted }: any) {
       <View style={styles.todoItem}>
         <View>
           <BouncyCheckbox
+            testID='bounce-element'
             isChecked={task.completed}
             onPress={() => toggleCompleted(task.id)} 
           />
         </View>
-        <Text style={[styles.todoItemText, task.completed && styles.completed]}>
+        <Text testID="task-text" style={[styles.todoItemText, task.completed && styles.completed]}>
           {task.text}
         </Text>
         <Pressable
           style={styles.deleteButton}
           onPress={() => deleteTask(task.id)}
         >
-          <Text style={{ color: '#000' }}>Delete</Text>
+          <Text testID='btn-delete' style={{ color: '#000' }}>Delete</Text>
         </Pressable>
       </View>
     </SafeAreaView>
